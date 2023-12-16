@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <h4>count: {{ count }}</h4>
+    <h4>double count computed: {{ doubleCountComputed }}</h4>
+    <h4>double count: {{ doubleCount }}</h4>
+    <button @click="count++">Add One</button>
     <h2>To-Do List</h2>
     <TodoSimpleForm @add-todo="addTodo" />
 
@@ -38,11 +42,24 @@ export default {
       todos.value[index].completed = !todos.value[index].completed;
     };
 
+    const count = ref(1);
+    const doubleCountComputed = computed(() => {
+      console.log("computed");
+      return count.value * 2;
+    });
+
+    const doubleCountMethod = () => {
+      return count.value * 2;
+    };
+
     return {
       todos,
       addTodo,
       deleteTodo,
       toggleTodo,
+      count,
+      doubleCountComputed,
+      doubleCountMethod,
     };
   },
 };
