@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import TodoSimpleForm from "./components/TodoSimpleForm.vue";
 import TodoList from "./components/TodoList.vue";
 
