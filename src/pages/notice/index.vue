@@ -1,70 +1,128 @@
 <template>
-  <h1>Notice</h1>
-  <div class="row">
-    <div class="col-12">
-      <div v-for="(item, index) in notices" :key="item.id" class="card mt-2">
-        <div class="card-body p-2 d-flex align-items-center">
-          <div class="form-check flex-grow-1">
-            <label class="form-check-label"> {{ item.subject }} {{ item.name }} </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- <form @submit.prevent="onSave">
-    <div class="row">
-      <div class="col-6">
-        <div class="form-group">
-          <label>Subject</label>
-          <input v-model="notice.subject" type="text" class="form-control" />
-        </div>
-      </div>
-      <div v-if="editing" class="col-6">
-        <div class="form-group">
-          <label>Status</label>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="form-group">
-          <label>컨텐츠</label>
-          <textarea
-            v-model="notice.content"
-            class="form-control"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">전송</button>
-  </form> -->
+  <Container>
+    <OuterWrapper>
+      <OutlineWrapper>
+        <ProfileWrapper>
+          <CounterWrapper>
+            <FontComponentVue fontSize="14px" color="#3E3E3E">TODAY</FontComponentVue>
+            <FontComponentVue fontSize="14px" color="#890026">12</FontComponentVue>
+            <FontComponentVue
+              fontSize="14px"
+              color="#3E3E3E"
+              :additionalStyles="{ margin: '0px 5px' }"
+              >|</FontComponentVue
+            >
+            <FontComponentVue fontSize="14px" color="#3E3E3E">TOTAL</FontComponentVue>
+            <FontComponentVue fontSize="14px" color="#3E3E3E">1488</FontComponentVue>
+          </CounterWrapper>
+          <ProfileBox>
+            <!-- <ProfileImage></ProfileImage>
+            <ProfileName></ProfileName>
+            <ProfileEmail></ProfileEmail>
+            <ProfilePhone></ProfilePhone>
+            <ProfileAddress></ProfileAddress>
+            <ProfileCompany></ProfileCompany> -->
+          </ProfileBox>
+        </ProfileWrapper>
+        <ContentWrapper></ContentWrapper>
+      </OutlineWrapper>
+    </OuterWrapper>
+  </Container>
 </template>
 
 <script>
-import { useRoute, useRouter } from "vue-router";
-import axios from "axios";
-import { ref, computed } from "vue";
-import _ from "lodash";
-import Toast from "@/components/Toast.vue";
-import { useToast } from "@/composables/toast";
+import FontComponentVue from "@/components/atoms/FontComponent.vue";
+import { defineComponent } from "vue";
+import styled from "vue3-styled-components";
 
-export default {
-  setup() {
-    const notices = ref([]);
-    const getNotices = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/notice");
-        notices.value = response.data;
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getNotices();
-    return {
-      notices,
-    };
+const borderRadius = "10px";
+const secondBorderRadius = "20px";
+
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  height: 800px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+`;
+const OuterWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 950px;
+  height: 700px;
+  background-color: #59b0d8;
+  border-radius: ${borderRadius};
+  border: 1px solid black;
+`;
+const OutlineWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  padding: 5px;
+  border: 1px dashed white;
+  border-radius: ${borderRadius};
+`;
+const ContentWrapper = styled.div`
+  display: flex;
+  flex: 7;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #efefef;
+  border-radius: ${secondBorderRadius};
+  border: 1px solid #c9c9c9;
+`;
+const ProfileWrapper = styled.div`
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: white;
+  border-radius: ${secondBorderRadius};
+  border: 1px solid #c9c9c9;
+  padding: 7px;
+`;
+const CounterWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  gap: 3px;
+`;
+const ProfileBox = styled.div`
+  flex: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: ${secondBorderRadius};
+  border: 1px solid #c9c9c9;
+`;
+
+export default defineComponent({
+  components: {
+    FontComponentVue,
+    Container,
+    OuterWrapper,
+    OutlineWrapper,
+    ProfileWrapper,
+    ContentWrapper,
+    CounterWrapper,
+    ProfileBox,
   },
-};
+});
 </script>
-
-<style></style>
