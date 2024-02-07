@@ -16,7 +16,15 @@
 </template>
 
 <script>
-export default {};
+import { provide } from "vue";
+
+export default {
+  provide() {
+    return {
+      theme: "light", // 주입할 데이터
+    };
+  },
+};
 </script>
 
 <style></style>
