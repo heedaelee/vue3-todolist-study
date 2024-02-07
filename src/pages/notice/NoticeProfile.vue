@@ -8,8 +8,9 @@
         fontSize="14px"
         color="#3E3E3E"
         :additionalStyles="{ margin: '0px 5px' }"
-        >|</FontComponentVue
       >
+        |
+      </FontComponentVue>
       <FontComponentVue fontSize="14px" color="#3E3E3E">TOTAL</FontComponentVue>
       <FontComponentVue fontSize="14px" color="#3E3E3E">1488</FontComponentVue>
       <!-- 추후 컴포넌트 분리-->
