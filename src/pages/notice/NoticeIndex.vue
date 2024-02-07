@@ -4,6 +4,7 @@
       <OutlineWrapper>
         <ProfileWrapper>
           <CounterWrapper>
+            <!-- TODO:추후 컴포넌트 분리 시작-->
             <FontComponentVue fontSize="14px" color="#3E3E3E">TODAY</FontComponentVue>
             <FontComponentVue fontSize="14px" color="#890026">12</FontComponentVue>
             <FontComponentVue
@@ -14,6 +15,7 @@
             >
             <FontComponentVue fontSize="14px" color="#3E3E3E">TOTAL</FontComponentVue>
             <FontComponentVue fontSize="14px" color="#3E3E3E">1488</FontComponentVue>
+            <!-- 추후 컴포넌트 분리-->
           </CounterWrapper>
           <ProfileBox>
             <!-- <ProfileImage></ProfileImage>

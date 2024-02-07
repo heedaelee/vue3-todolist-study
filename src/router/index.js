@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/index.vue";
-import Todos from "../pages/todos/index.vue";
+import Todos from "../pages/todos/TodoIndex.vue";
 import Todo from "../pages/todos/_id.vue";
-import Notice from "../pages/notice/index.vue";
-import TodoCreate from "../pages/todos/create/index.vue";
+import Notice from "../pages/notice/NoticeIndex.vue";
+import TodoCreate from "../pages/todos/create/CreeateIndex.vue";
 
 const router = createRouter({
   history: createWebHistory(),
