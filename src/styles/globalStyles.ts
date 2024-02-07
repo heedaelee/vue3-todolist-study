@@ -34,18 +34,7 @@ const GlobalStyles = {
     // regular: 'NotoSansKR-Regular',
   },
   backgroundColor: "#F5F5F5",
-  BoxShadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.27,
-    shadowRadius: 10,
-    elevation: 6,
-    backgroundColor: "#F5F5F5",
-    borderRadius: 10,
-  },
+  secondBorderRadius: "20px",
 };
 
 export { GlobalStyles };

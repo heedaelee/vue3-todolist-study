@@ -29,7 +29,7 @@
 <script>
 import FontComponentVue from "@/components/atoms/FontComponent.vue";
 import styled from "vue3-styled-components";
-import { secondBorderRadius } from "@/styles/variables";
+import { GlobalStyles } from "@/styles/globalStyles";
 
 const ProfileWrapper = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ const ProfileWrapper = styled.div`
   align-items: center;
   height: 100%;
   background-color: white;
-  border-radius: ${secondBorderRadius};
+  border-radius: ${GlobalStyles.secondBorderRadius};
   border: 1px solid #c9c9c9;
   padding: 7px;
 `;
@@ -60,7 +60,7 @@ const ProfileBox = styled.div`
   align-items: center;
   width: 100%;
   background-color: #f5f5f5;
-  border-radius: ${secondBorderRadius};
+  border-radius: ${GlobalStyles.secondBorderRadius};
   border: 1px solid #c9c9c9;
 `;
 export default {
@@ -68,6 +68,7 @@ export default {
     ProfileWrapper,
     CounterWrapper,
     ProfileBox,
+    FontComponentVue,
   },
 };
 </script>

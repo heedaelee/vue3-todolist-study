@@ -2,18 +2,19 @@
   <Container>
     <OuterWrapper>
       <OutlineWrapper>
-        <ContentWrapper></ContentWrapper>
+        <NoticeProfile />
+        <ContentWrapper />
       </OutlineWrapper>
     </OuterWrapper>
   </Container>
 </template>
 
 <script>
+import { GlobalStyles } from "@/styles/globalStyles";
 import { defineComponent } from "vue";
 import styled from "vue3-styled-components";
-
-const borderRadius = "10px";
-export const secondBorderRadius = "20px";
+import NoticeProfile from "@/pages/notice/NoticeProfile.vue";
+export const borderRadius = "10px";
 
 const Container = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   height: 100%;
   background-color: #efefef;
-  border-radius: ${secondBorderRadius};
+  border-radius: ${GlobalStyles.secondBorderRadius};
   border: 1px solid #c9c9c9;
 `;
 
@@ -64,6 +65,7 @@ export default defineComponent({
     OuterWrapper,
     OutlineWrapper,
     ContentWrapper,
+    NoticeProfile,
   },
 });
 </script>

@@ -33,9 +33,9 @@
           }}</a>
         </li>
         <li v-if="numberOfPages !== currentPage" class="page-item">
-          <a style="cursor: pointer" class="page-link" @click="getTodos(currentPage + 1)"
-            >Next</a
-          >
+          <a style="cursor: pointer" class="page-link" @click="getTodos(currentPage + 1)">
+            Next
+          </a>
         </li>
       </ul>
     </nav>
