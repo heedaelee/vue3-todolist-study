@@ -2,20 +2,22 @@
   <Container>
     <OuterWrapper>
       <OutlineWrapper>
+        <!-- 좌측 프로필 -->
         <NoticeProfile />
-        <ContentWrapper />
+        <!-- 우측 컨텐츠 -->
+        <NoticeContnets />
       </OutlineWrapper>
     </OuterWrapper>
   </Container>
 </template>
 
 <script>
-import { GlobalStyles } from "@/styles/globalStyles";
 import { defineComponent } from "vue";
 import styled from "vue3-styled-components";
-import NoticeProfile from "@/pages/notice/NoticeProfile.vue";
-export const borderRadius = "10px";
+import NoticeProfile from "@/pages/notice/profile/NoticeProfile.vue";
+import NoticeContnets from "./contents/NoticeContnets.vue";
 
+export const borderRadius = "10px";
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -47,25 +49,14 @@ const OutlineWrapper = styled.div`
   border: 1px dashed white;
   border-radius: ${borderRadius};
 `;
-const ContentWrapper = styled.div`
-  display: flex;
-  flex: 7;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: #efefef;
-  border-radius: ${GlobalStyles.secondBorderRadius};
-  border: 1px solid #c9c9c9;
-`;
 
 export default defineComponent({
   components: {
     Container,
     OuterWrapper,
     OutlineWrapper,
-    ContentWrapper,
     NoticeProfile,
+    NoticeContnets,
   },
 });
 </script>
